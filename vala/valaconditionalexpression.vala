@@ -104,12 +104,6 @@ public class Vala.ConditionalExpression : Expression {
 		return condition.is_accessible (sym) && true_expression.is_accessible (sym) && false_expression.is_accessible (sym);
 	}
 
-	public override void get_defined_variables (Collection<Variable> collection) {
-		condition.get_defined_variables (collection);
-		true_expression.get_defined_variables (collection);
-		false_expression.get_defined_variables (collection);
-	}
-
 	public override void get_used_variables (Collection<Variable> collection) {
 		condition.get_used_variables (collection);
 		true_expression.get_used_variables (collection);

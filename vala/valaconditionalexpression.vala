@@ -120,6 +120,12 @@ public class Vala.ConditionalExpression : Expression {
 		}
 	}
 
+	public override void get_error_types (Collection<DataType> collection, SourceReference? source_reference = null) {
+		condition.get_error_types (collection, source_reference);
+		true_expression.get_error_types (collection, source_reference);
+		false_expression.get_error_types (collection, source_reference);
+	}
+	
 	public override bool check (CodeContext context) {
 		if (checked) {
 			return !error;

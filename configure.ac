@@ -96,6 +96,8 @@ AC_SUBST(GMODULE_LIBS)
 AC_PATH_PROG([XSLTPROC], [xsltproc], :)
 AM_CONDITIONAL(HAVE_XSLTPROC, test "$XSLTPROC" != :)
 
+GLIB_TESTS
+
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 AC_CONFIG_FILES([Makefile
@@ -106,6 +108,7 @@ AC_CONFIG_FILES([Makefile
            codegen/Makefile
            compiler/Makefile
            vapi/Makefile
+           valadate/Makefile
            tests/Makefile
            doc/Makefile
            doc/vala/Makefile

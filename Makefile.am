@@ -9,10 +9,11 @@ SUBDIRS = \
 	codegen \
 	compiler \
 	vapi \
-	tests \
+	valadate \
 	doc \
 	gobject-introspection \
 	vapigen \
+	tests \
 	$(NULL)
 
 if ENABLE_UNVERSIONED
@@ -30,10 +31,6 @@ libvala@PACKAGE_SUFFIX@.pc: libvala.pc
 bootstrap: all
 	find $(top_srcdir) -name "*.vala.stamp" | xargs rm -f
 	$(MAKE) $(AM_MAKEFLAGS) all VALAC=$(abs_top_builddir)/compiler/valac$(EXEEXT) V=$V
-
-.PHONY: test
-test:
-	cd tests && $(MAKE) $(AM_MAKEFLAGS) check
 
 #if ENABLE_COVERAGE
 .PHONY: coverage coverage-report
@@ -91,6 +88,8 @@ EXTRA_DIST = \
 	.version \
 	build-aux/git-version-gen \
 	build-aux/gitlog-to-changelog \
+	build-aux/glib-tap.mk \
+	build-aux/tap-driver.sh \
 	$(NULL)
 
 DISTCLEANFILES = version.h

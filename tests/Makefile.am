@@ -47,7 +47,8 @@ valactests@PACKAGE_SUFFIX@_VALAFLAGS = \
 	-g
 	
 valactests@PACKAGE_SUFFIX@_SOURCES = \
-	valatests.vala
+	valatests.vala \
+	valatestsfactory.vala
 
 valactests@PACKAGE_SUFFIX@_LDADD = \
 	$(GLIB_LIBS) \

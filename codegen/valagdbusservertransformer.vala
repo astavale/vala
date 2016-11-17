@@ -79,7 +79,7 @@ public class Vala.GDBusServerTransformer : GDBusClientTransformer {
 				continue;
 			}
 			if (type_name == "GLib.BusName") {
-				call.add_argument (expression ("(BusName) invocation.get_sender ()"));
+				call.add_argument (expression ("(GLib.BusName) invocation.get_sender ()"));
 				continue;
 			}
 
